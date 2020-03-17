@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  db:
+    image: postgres:10
+
+  web:
+    build: .
+    command:
+      sh -c "python manage.py makemigrations && 
+             python manage.py migrate auth && 
+             python manage.py migrate --run-syncdb &&
+             python manage.py runserver 0.0.0.0:8000"
+    depends_on:
+      - db
+    volumes:
+      - .:/data
+    ports:
+      - "8000:8000"
+    links:
+      - db
+    restart: always

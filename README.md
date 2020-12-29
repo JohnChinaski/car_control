@@ -1,6 +1,6 @@
 ### DESCRIÇÃO
 
-Aplicação web desenvolvida para gerenciamento de veículos e seus proprietários.
+Aplicação web desenvolvida para gerenciamento de veículos e seus proprietários via API REST utilizando framework Django e Django Rest Framework.
 
 
 ### REQUISITOS
